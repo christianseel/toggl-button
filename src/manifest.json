@@ -64,7 +64,8 @@
     "*://*.getflow.com/*",
     "*://sprint.ly/*",
     "*://www.google.com/calendar/*",
-    "*://*.protonet.info/*"
+    "*://*.protonet.info/*",
+    "*://protonet.chsmedien.info/*"
   ],
   "icons": {
     "16": "images/icon-16.png",
@@ -119,7 +120,8 @@
         "*://*.getflow.com/*",
         "*://sprint.ly/*",
         "*://www.google.com/calendar/*",
-        "*://*.protonet.info/*"
+        "*://*.protonet.info/*",
+        "*://protonet.chsmedien.info/*"
       ],
       "css": ["styles/style.css"],
       "js": ["scripts/common.js"]
@@ -303,7 +305,7 @@
     }
     ,
     {
-      "matches": ["*://*.protonet.info/*"],
+      "matches": ["*://*.protonet.info/*","*://protonet.chsmedien.info/*"],
       "js": ["scripts/content/protonet.js"]
     }
   ]
