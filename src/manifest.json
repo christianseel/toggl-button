@@ -75,7 +75,7 @@
     "*://app.breeze.pm/*",
     "*://www.gqueues.com/*",
     "*://app.codeable.io/*",
-    "*://www.assembla.com/*"
+    "*://www.assembla.com/*",
     "*://*.protonet.info/*",
     "*://protonet.chsmedien.info/*"
   ],
@@ -144,7 +144,7 @@
         "*://www.gqueues.com/*",
         "*://app.codeable.io/*",
         "*://waffle.io/*",
-        "*://www.assembla.com/*"
+        "*://www.assembla.com/*",
         "*://*.protonet.info/*",
         "*://protonet.chsmedien.info/*"
       ],
@@ -363,8 +363,7 @@
     {
       "matches": ["*://www.assembla.com/*"],
       "js": ["scripts/content/assembla.js"]
-    }
-    ,
+    },
     {
       "matches": ["*://*.protonet.info/*","*://protonet.chsmedien.info/*"],
       "js": ["scripts/content/protonet.js"]
