@@ -4,9 +4,9 @@
 
 togglbutton.render('.todo-details:not(.toggl)', {observe: true}, function (elem) {
   var link,
-    title = $('.name', elem).textContent,
+    title = $('.name', elem).textContent.trim(),
     href = $('.name', elem).getAttribute('href'),
-    project = $('ul.breadcrumb li:nth-child(3) a', elem).textContent,
+    project = $('ul.breadcrumb li:nth-child(1) a', elem).textContent.trim(),
     id = href.split("/").pop(-1),
     description = '#' + id + ': ' + title;
 
@@ -22,8 +22,8 @@ togglbutton.render('.todo-details:not(.toggl)', {observe: true}, function (elem)
 
 togglbutton.render('.detail-content-wrapper li.meep.Meep:not(.toggl)', {observe: true}, function (elem) {
   var link, project,
-    project = $('.detail-content-wrapper .name').textContent,
-    title = $('.message', elem).textContent,
+    project = $('.detail-content-wrapper .name').textContent.trim(),
+    title = $('.message', elem).textContent.trim(),
     href = window.location.href + $('.meta .time', elem).getAttribute('href'),
     id = href.split("meep_id=").pop(-1),
     description = 'Nachricht #' + id + ' (' + href + ')',
@@ -40,6 +40,7 @@ togglbutton.render('.detail-content-wrapper li.meep.Meep:not(.toggl)', {observe:
   link.style.marginTop = '-1px';
   link.style.marginLeft = '4px';
   link.style.paddingTop = '1px';
+  link.style.paddingLeft = '3px';
   link.style.opacity = '0.5';
   link.style.fontSize = '17px';
   link.style.transform = 'scale(0.8)';

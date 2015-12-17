@@ -571,6 +571,10 @@
             ]
         },
         {
+      "matches": ["*://*.protonet.info/*","*://protonet.chsmedien.info/*"],
+      "js": ["scripts/content/protonet.js"]
+    },
+        {
             "matches": [
                 "*://*.salesforce.com/*"
             ],
