@@ -5,11 +5,12 @@
     <link rel="stylesheet" href="../styles/popup.css"/>
   </head>
   <body>
-    <div class="header"></div>
-    <div class="user-email"></div>
-
+    <div class="header" title="Open Toggl.com"></div>
+    <div class="user-email" title="Open profile at Toggl.com"></div>
+    <div class="error">Error connecting to server</div>
     <ul class="menu view">   
       <li>
+        <div class="project-bullet"></div>
         <div class="edit-button"></div>
         <div class="stop-button">Stop</div>
       </li>
@@ -37,6 +38,7 @@
           <input name="user_password" type="password" id="login_password" class="text-input" value="">
         </p>
         <p class="form-submit-row cf">
+          <a href="https://toggl.com/forgot-password" class="forgot-link">Forgot password?</a>
           <input type="submit" value="Log in" class="btn-small right login-btn">
         </p>
       </form>

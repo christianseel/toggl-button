@@ -134,9 +134,9 @@ var togglbutton = {
 
 
   resetTasks: function () {
-    $("#toggl-button-task-placeholder").removeEventListener('click', togglbutton.delegateTaskClick);
-    $("#toggl-button-task-placeholder > div").innerHTML = "Add task";
-    $("#toggl-button-task").innerHTML = "";
+    document.querySelector("#toggl-button-task-placeholder").removeEventListener('click', togglbutton.delegateTaskClick);
+    document.querySelector("#toggl-button-task-placeholder > div").innerHTML = "Add task";
+    document.querySelector("#toggl-button-task").innerHTML = "";
   },
 
   generateProjectLabel: function (select, pid) {
@@ -221,7 +221,8 @@ var togglbutton = {
           pid: selectedProject.value,
           projectName: selectedProject.options[selectedProject.selectedIndex].text,
           tags: togglbutton.getSelectedTags(),
-          tid: (taskButton && taskButton.value) ? taskButton.value : null
+          tid: (taskButton && taskButton.value) ? taskButton.value : null,
+          service: togglbutton.serviceName
         };
       chrome.extension.sendMessage(request);
       closeTagsList(true);
@@ -258,6 +259,7 @@ var togglbutton = {
       } else {
         dropdown.style.display = "block";
         updateTags(true);
+        dropdown.focus();
       }
       togglbutton.tagsVisible = !togglbutton.tagsVisible;
     };
@@ -388,6 +390,9 @@ var togglbutton = {
     var link = createLink('toggl-button');
     togglbutton.currentDescription = invokeIfFunction(params.description);
     function activate() {
+      if (document.querySelector(".toggl-button.active")) {
+        document.querySelector(".toggl-button.active").classList.remove('active');
+      }
       link.classList.add('active');
       link.style.color = '#1ab351';
       if (params.buttonType !== 'minimal') {
@@ -417,7 +422,10 @@ var togglbutton = {
 
       if (link.classList.contains('active')) {
         deactivate();
-        opts = {type: 'stop'};
+        opts = {
+          type: 'stop',
+          service: togglbutton.serviceName
+        };
       } else {
         activate();
         opts = {
@@ -427,7 +435,8 @@ var togglbutton = {
           description: invokeIfFunction(params.description),
           tags: invokeIfFunction(params.tags),
           projectName: invokeIfFunction(params.projectName),
-          createdWith: togglbutton.fullVersion
+          createdWith: togglbutton.fullVersion + "-" + togglbutton.serviceName,
+          service: togglbutton.serviceName
         };
       }
       togglbutton.element = e.target;
