@@ -93,7 +93,7 @@
         "*://app.codeable.io/*",
         "*://www.assembla.com/*",
         "*://*.protonet.info/*",
-        "*://protonet.chsmedien.info/*",
+        "*://protonet.seda.digital/*",
         "*://*.salesforce.com/*",
         "*://*.draftin.com/*",
         "*://*.fogbugz.com/*"
@@ -160,7 +160,7 @@
                 "*://waffle.io/*",
                 "*://www.assembla.com/*",
                 "*://*.protonet.info/*",
-                "*://protonet.chsmedien.info/*",
+                "*://protonet.seda.digital/*",
                 "*://*.salesforce.com/*",
                 "*://*.draftin.com/*",
                 "*://*.fogbugz.com/*"
@@ -571,7 +571,7 @@
             ]
         },
         {
-      "matches": ["*://*.protonet.info/*","*://protonet.chsmedien.info/*"],
+      "matches": ["*://*.protonet.info/*","*://protonet.seda.digital/*"],
       "js": ["scripts/content/protonet.js"]
     },
         {
